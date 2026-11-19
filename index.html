@@ -1,0 +1,758 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HotelEase | Your Perfect Stay</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <header>
+        <nav class="navbar">
+
+            <h2 class="logo">HotelEase</h2>
+
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#destinations">Destinations</a></li>
+                <li><a href="#hotels">Hotels</a></li>
+                <li><a href="#offers">Offers</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <a href="#hotels" class="nav-btn">Explore Now</a>
+
+        </nav>
+    </header>
+
+
+    <!-- HOME / HERO SECTION -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <span class="welcome-text">WELCOME TO HOTELEASE</span>
+
+            <h1>Find Your Perfect Stay</h1>
+
+            <p>
+                Discover beautiful destinations, comfortable hotels
+                and memorable experiences. Your journey begins with us.
+            </p>
+
+            <a href="#hotels" class="btn">Explore Hotels</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH SECTION -->
+
+    <section class="search-section">
+
+        <h2>Find Your Stay</h2>
+
+        <p>Search for your ideal hotel and plan your next journey.</p>
+
+        <div class="search-box">
+
+            <div>
+                <label>Destination</label>
+                <input type="text" id="citySearch"
+                    placeholder="Enter city name">
+            </div>
+
+            <div>
+                <label>Check-in</label>
+                <input type="date" id="checkin">
+            </div>
+
+            <div>
+                <label>Check-out</label>
+                <input type="date" id="checkout">
+            </div>
+
+            <div>
+                <label>Guests</label>
+                <select id="guests">
+                    <option>1 Guest</option>
+                    <option>2 Guests</option>
+                    <option>3 Guests</option>
+                    <option>4 Guests</option>
+                </select>
+            </div>
+
+            <button type="button" onclick="searchHotels()">
+                Search
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- POPULAR DESTINATIONS -->
+
+    <section id="destinations" class="destinations-section">
+
+        <h2>Popular Destinations</h2>
+
+        <p class="section-description">
+            Explore some of India's most popular travel destinations.
+        </p>
+
+        <div class="destination-container">
+
+            <div class="destination-card">
+                <img src="images/jaipur.jpg" alt="Jaipur">
+                <h3>Jaipur</h3>
+                <p>Rajasthan</p>
+            </div>
+
+            <div class="destination-card">
+                <img src="images/mumbai.jpg" alt="Mumbai">
+                <h3>Mumbai</h3>
+                <p>Maharashtra</p>
+            </div>
+
+            <div class="destination-card">
+                <img src="images/goa.jpg" alt="Goa">
+                <h3>Goa</h3>
+                <p>India</p>
+            </div>
+
+            <div class="destination-card">
+                <img src="images/manali.jpg" alt="Manali">
+                <h3>Manali</h3>
+                <p>Himachal Pradesh</p>
+            </div>
+
+            <div class="destination-card">
+                <img src="images/udaipur.jpg" alt="Udaipur">
+                <h3>Udaipur</h3>
+                <p>Rajasthan</p>
+            </div>
+
+            <div class="destination-card">
+                <img src="images/delhi.jpg" alt="Delhi">
+                <h3>New Delhi</h3>
+                <p>India</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FEATURED HOTELS -->
+
+    <section id="hotels" class="hotels-section">
+
+        <h2>Explore Our Hotels</h2>
+
+        <p class="section-description">
+            Choose from our selected hotels for a comfortable stay.
+        </p>
+
+        <div class="filter-section">
+
+            <label>Filter by price:</label>
+
+            <select id="priceFilter" onchange="filterHotels()">
+                <option value="all">All Prices</option>
+                <option value="low">Under ₹2,000</option>
+                <option value="medium">₹2,000 - ₹3,000</option>
+                <option value="high">Above ₹3,000</option>
+            </select>
+
+        </div>
+
+
+        <div class="hotel-container" id="hotelContainer">
+
+            <div class="hotel-card" data-city="jaipur" data-price="2500">
+
+                <img src="images/hotel1.jpg" alt="Royal Palace Hotel">
+
+                <div class="hotel-info">
+
+                    <h3>Royal Palace Hotel</h3>
+
+                    <p class="location">Jaipur, Rajasthan</p>
+
+                    <p>
+                        Enjoy a relaxing stay with beautiful interiors
+                        and traditional hospitality.
+                    </p>
+
+                    <h4>₹2,500 <span>/ Night</span></h4>
+
+                    <a href="#booking" class="btn">Book Now</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hotel-card" data-city="mumbai" data-price="3200">
+
+                <img src="images/hotel2.jpg" alt="Grand City Hotel">
+
+                <div class="hotel-info">
+
+                    <h3>Grand City Hotel</h3>
+
+                    <p class="location">Mumbai, Maharashtra</p>
+
+                    <p>
+                        Experience modern rooms and a convenient
+                        location for your city visit.
+                    </p>
+
+                    <h4>₹3,200 <span>/ Night</span></h4>
+
+                    <a href="#booking" class="btn">Book Now</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hotel-card" data-city="delhi" data-price="1800">
+
+                <img src="images/hotel3.jpg" alt="Comfort Inn">
+
+                <div class="hotel-info">
+
+                    <h3>Comfort Inn</h3>
+
+                    <p class="location">New Delhi</p>
+
+                    <p>
+                        A comfortable and affordable place
+                        for your next city stay.
+                    </p>
+
+                    <h4>₹1,800 <span>/ Night</span></h4>
+
+                    <a href="#booking" class="btn">Book Now</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hotel-card" data-city="goa" data-price="4000">
+
+                <img src="images/hotel4.jpg" alt="Ocean View Resort">
+
+                <div class="hotel-info">
+
+                    <h3>Ocean View Resort</h3>
+
+                    <p class="location">Goa</p>
+
+                    <p>
+                        Enjoy a peaceful beachside holiday
+                        with beautiful surroundings.
+                    </p>
+
+                    <h4>₹4,000 <span>/ Night</span></h4>
+
+                    <a href="#booking" class="btn">Book Now</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hotel-card" data-city="udaipur" data-price="3500">
+
+                <img src="images/hotel5.jpg" alt="Lake Palace Stay">
+
+                <div class="hotel-info">
+
+                    <h3>Lake Palace Stay</h3>
+
+                    <p class="location">Udaipur, Rajasthan</p>
+
+                    <p>
+                        Experience a relaxing stay with
+                        beautiful lake surroundings.
+                    </p>
+
+                    <h4>₹3,500 <span>/ Night</span></h4>
+
+                    <a href="#booking" class="btn">Book Now</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hotel-card" data-city="manali" data-price="2800">
+
+                <img src="images/hotel6.jpg" alt="Mountain Retreat">
+
+                <div class="hotel-info">
+
+                    <h3>Mountain Retreat</h3>
+
+                    <p class="location">Manali, Himachal Pradesh</p>
+
+                    <p>
+                        Enjoy beautiful mountain views
+                        and a peaceful atmosphere.
+                    </p>
+
+                    <h4>₹2,800 <span>/ Night</span></h4>
+
+                    <a href="#booking" class="btn">Book Now</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hotel-card" data-city="bengaluru" data-price="2200">
+
+                <img src="images/hotel7.jpg" alt="Green Park Hotel">
+
+                <div class="hotel-info">
+
+                    <h3>Green Park Hotel</h3>
+
+                    <p class="location">Bengaluru, Karnataka</p>
+
+                    <p>
+                        A convenient stay with modern
+                        facilities and comfortable rooms.
+                    </p>
+
+                    <h4>₹2,200 <span>/ Night</span></h4>
+
+                    <a href="#booking" class="btn">Book Now</a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hotel-card" data-city="varanasi" data-price="1600">
+
+                <img src="images/hotel8.jpg" alt="Ganga View Hotel">
+
+                <div class="hotel-info">
+
+                    <h3>Ganga View Hotel</h3>
+
+                    <p class="location">Varanasi, Uttar Pradesh</p>
+
+                    <p>
+                        Discover a comfortable stay
+                        near the beautiful Ganga river.
+                    </p>
+
+                    <h4>₹1,600 <span>/ Night</span></h4>
+
+                    <a href="#booking" class="btn">Book Now</a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <p id="noResults" class="no-results" style="display:none;">
+            No hotels found. Try another city or price range.
+        </p>
+
+    </section>
+
+
+    <!-- SPECIAL OFFERS -->
+
+    <section id="offers" class="offers-section">
+
+        <h2>Special Offers</h2>
+
+        <p class="section-description">
+            Explore our sample offers for your next hotel stay.
+        </p>
+
+        <div class="offer-container">
+
+            <div class="offer-card">
+                <h3>Weekend Getaway</h3>
+                <h2>15% OFF</h2>
+                <p>Enjoy a relaxing weekend at selected hotels.</p>
+            </div>
+
+            <div class="offer-card">
+                <h3>Family Special</h3>
+                <h2>10% OFF</h2>
+                <p>Plan a comfortable family trip with special savings.</p>
+            </div>
+
+            <div class="offer-card">
+                <h3>Early Booking</h3>
+                <h2>20% OFF</h2>
+                <p>Plan ahead and enjoy our early booking offer.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WHY CHOOSE HOTELEASE -->
+
+    <section class="features-section">
+
+        <h2>Why Choose HotelEase?</h2>
+
+        <p class="section-description">
+            We make finding and booking hotels easier.
+        </p>
+
+        <div class="features-container">
+
+            <div class="feature">
+                <h3>Easy Booking</h3>
+                <p>
+                    Explore hotels and submit your reservation
+                    through a simple booking process.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Multiple Choices</h3>
+                <p>
+                    Find different hotels across
+                    popular Indian destinations.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Affordable Prices</h3>
+                <p>
+                    Compare sample room prices
+                    and choose according to your budget.
+                </p>
+            </div>
+
+            <div class="feature">
+                <h3>Simple Experience</h3>
+                <p>
+                    Use an easy-to-understand platform
+                    to explore your hotel options.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OUR SERVICES -->
+
+    <section class="services-section">
+
+        <h2>Our Services</h2>
+
+        <p class="section-description">
+            Explore the facilities available through our platform.
+        </p>
+
+        <div class="services-container">
+
+            <div class="service">
+                <h3>Hotel Search</h3>
+                <p>Find hotels according to your preferred destination.</p>
+            </div>
+
+            <div class="service">
+                <h3>Room Information</h3>
+                <p>Explore hotel details and sample room prices.</p>
+            </div>
+
+            <div class="service">
+                <h3>Online Reservations</h3>
+                <p>Submit your booking details through our website.</p>
+            </div>
+
+            <div class="service">
+                <h3>Booking Details</h3>
+                <p>View a confirmation message after submitting a booking.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT US -->
+
+    <section id="about" class="about-section">
+
+        <h2>About HotelEase</h2>
+
+        <p>
+            HotelEase is an online hotel reservation and management
+            platform developed to make hotel searching and booking
+            easier for users.
+        </p>
+
+        <p>
+            The platform provides information about different hotels,
+            their locations, room prices and facilities. Users can
+            explore destinations, compare hotel options and submit
+            their reservation details through a simple interface.
+        </p>
+
+        <p>
+            This project aims to demonstrate how web technologies
+            such as HTML, CSS and JavaScript can be used to develop
+            a useful and user-friendly hotel reservation platform.
+        </p>
+
+    </section>
+
+
+    <!-- CUSTOMER REVIEWS -->
+
+    <section class="reviews-section">
+
+        <h2>What Visitors Say</h2>
+
+        <p class="section-description">
+            Sample feedback for our HotelEase demonstration.
+        </p>
+
+        <div class="review-container">
+
+            <div class="review-card">
+                <h3>Rahul Sharma</h3>
+                <p class="stars">★★★★★</p>
+                <p>
+                    The website is simple to use and
+                    makes exploring hotels convenient.
+                </p>
+            </div>
+
+            <div class="review-card">
+                <h3>Priya Verma</h3>
+                <p class="stars">★★★★★</p>
+                <p>
+                    I like the clean design and
+                    the different hotel choices.
+                </p>
+            </div>
+
+            <div class="review-card">
+                <h3>Aman Singh</h3>
+                <p class="stars">★★★★☆</p>
+                <p>
+                    A helpful platform for exploring
+                    hotel options in different cities.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAQ SECTION -->
+
+    <section class="faq-section">
+
+        <h2>Frequently Asked Questions</h2>
+
+        <div class="faq-container">
+
+            <div class="faq">
+                <h3>1. What is HotelEase?</h3>
+                <p>
+                    HotelEase is a hotel reservation platform
+                    that helps users explore hotels and submit bookings.
+                </p>
+            </div>
+
+            <div class="faq">
+                <h3>2. How can I search for hotels?</h3>
+                <p>
+                    Enter your preferred city in the search box
+                    and view the matching hotels.
+                </p>
+            </div>
+
+            <div class="faq">
+                <h3>3. Can I compare hotel prices?</h3>
+                <p>
+                    Yes, you can view the sample prices
+                    of the hotels displayed on our website.
+                </p>
+            </div>
+
+            <div class="faq">
+                <h3>4. Is online payment available?</h3>
+                <p>
+                    Online payment is not included in
+                    this prototype version of HotelEase.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BOOKING SECTION -->
+
+    <section id="booking" class="booking-section">
+
+        <h2>Ready for Your Next Journey?</h2>
+
+        <p>
+            Explore our hotel collection and find
+            a comfortable place for your next stay.
+        </p>
+
+        <a href="https://sdms.mitsgwalior.in/project/6473?tab=milestones" class="btn">Explore Hotels</a>
+        <button type="button" class="btn" onclick="document.getElementById('bookingForm').hidden = false">
+    Book Now
+</button>
+
+<!-- BOOKING FORM -->
+<div id="bookingForm" class="booking-form" hidden>
+
+    <h2>Complete Your Booking</h2>
+
+    <form id="hotelBookingForm">
+
+        <label>Full Name</label>
+        <input type="text" id="customerName" placeholder="Enter your name" required>
+
+        <label>Email Address</label>
+        <input type="email" id="customerEmail" placeholder="Enter your email" required>
+
+        <label>Select Hotel</label>
+        <select id="selectedHotel" required>
+            <option value="">Choose a hotel</option>
+            <option>Royal Palace Hotel</option>
+            <option>Grand City Hotel</option>
+            <option>Comfort Inn</option>
+            <option>Ocean View Resort</option>
+            <option>Lake Palace Stay</option>
+            <option>Mountain Retreat</option>
+            <option>Green Park Hotel</option>
+            <option>Ganga View Hotel</option>
+        </select>
+
+        <label>Check-in Date</label>
+        <input type="date" id="bookingCheckin" required>
+
+        <label>Check-out Date</label>
+        <input type="date" id="bookingCheckout" required>
+
+        <label>Number of Guests</label>
+        <input type="number" id="bookingGuests" min="1" max="10" value="1" required>
+
+        <button type="button" onclick="confirmBooking()">Confirm Booking</button>
+
+    </form>
+
+</div>
+
+
+    </section>
+
+
+    <!-- CONTACT US -->
+
+    <section id="contact" class="contact-section">
+
+        <h2>Contact Us</h2>
+
+        <p class="section-description">
+            Have questions? Get in touch with our team.
+        </p>
+
+        <div class="contact-details">
+
+            <div>
+                <h3>Email</h3>
+                <p>support@hotelease.com</p>
+            </div>
+
+            <div>
+                <h3>Phone</h3>
+                <p>+91 9876571235 or 7389916441</p>
+            </div>
+
+            <div>
+                <h3>Location</h3>
+                <p>India</p>
+            </div>
+
+        </div>
+
+        <form class="contact-form" onsubmit="submitContact(event)">
+
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Your Email" required>
+
+            <textarea placeholder="Write your message" rows="5"
+                required></textarea>
+
+            <button type="submit" class="btn">Send Message</button>
+
+        </form>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>HotelEase</h2>
+
+        <p>
+            Making hotel reservations simple and convenient.
+        </p>
+
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#hotels">Hotels</a>
+            <a href="#about">About Us</a>
+            <a href="#contact">Contact</a>
+        </div>
+
+        <p>© 2026 HotelEase. All Rights Reserved.</p>
+
+        
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
